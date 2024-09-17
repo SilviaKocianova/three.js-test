@@ -64,6 +64,25 @@ scene.add(star);
 Array(200).fill().forEach(addStar)
 
 
+
+//SPACE JPG
+const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+scene.background = spaceTexture;
+
+
+//DOG JPG mapping
+const dogTexture = new THREE.TextureLoader().load('dog.jpg');
+
+const dog = new THREE.Mesh(
+  new THREE.BoxGeometry(3,3,3),
+  new THREE.MeshBasicMaterial({map: dogTexture})
+);
+
+scene.add(dog);
+
+
+
+
 //animation
 function animate () {
   requestAnimationFrame(animate); //tells the browser I wanna perform an animation
