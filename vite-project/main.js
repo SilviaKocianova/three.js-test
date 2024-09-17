@@ -48,6 +48,21 @@ scene.add(lightHelper, gridHelper)
 const controls = new OrbitControls(camera, renderer.domElement); //adds controls along w import
 
 
+//STARS
+function addStar() {
+  const geometry = new THREE.SphereGeometry( 0.25, 24, 24);
+  const material = new THREE.MeshStandardMaterial ({color: 0xffffff})
+  const star = new THREE.Mesh (geometry, material);
+    //random generation of stars
+const [x,y,z] = Array(3).fill().map(()=> THREE.MathUtils.randFloatSpread(100)); //number that random generates from 0 to 100
+
+star.position.set(x,y,z);
+scene.add(star);
+}
+
+    //how many stars do i want in the scene?
+Array(200).fill().forEach(addStar)
+
 
 //animation
 function animate () {
