@@ -81,6 +81,15 @@ const dog = new THREE.Mesh(
 scene.add(dog);
 
 
+//TREE SPHERE
+const treeTexture = new THREE.TextureLoader().load('tree.jpg')
+
+const tree = new THREE.Mesh(
+  new THREE.SphereGeometry (3, 32, 32),
+  new THREE.MeshStandardMaterial( {
+    map: treeTexture
+  })
+);
 
 
 //animation
